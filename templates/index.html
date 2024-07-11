@@ -3,9 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}">
+    <script src="https://kit.fontawesome.com/f806682d97.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 <body>
-    <h1>My Resume</h1>
+    <header>
+        <h1>{{ template_resume['name'] }}</h1>
+        <h4><i class="fa-solid {{ template_resume['phone_num'][1] }} fa-xl"></i>{{ template_resume['phone_num'][0] }}</h4>
+        <h4><i class="fa-solid {{ template_resume['email'][1] }} fa-xl" ></i>{{ template_resume['email'][0] }}</h4>
+        <!--TODO: Check for appropriate use of icons-->
+        {% for link_info in template_resume['links'] %}
+            <a href="{{ link_info[0] }}" target="_blank"><i class="fa-brands {{ link_info[1] }} fa-xl"></i></a>
+        {% endfor %}
+    </header>
+
+    <div class="skills">
+
+    </div>
+
+
+    <div class="education">
+        <h4>Education</h4>
+        <h4>Bachelor of Science, Computer Science</h4>
+        <p>Georgia Southern University</p>
+    </div>
+
+    <div class="projects">
+        {% for project in template_resume['projects'] %}
+            <h4> {{ project['name'] }}</h4>
+            <ul>
+                {% for description in project['description'] %}
+                <li>{{ description }}</li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </div>
+
+    
+
+
 </body>
 </html>

@@ -1,0 +1,27 @@
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h4 {
+    display: inline;
+}
+
+.fa-solid {
+    color: dodgerblue;
+}
+
+.fa-github {
+    color: #6cc644;
+}
+
+.fa-linkedin {
+    color: cornflowerblue;
+}
+
+.fa-github, .fa-linkedin, .fa-solid {
+    padding: 8px;
+}
+
+header {
+    padding-bottom: 16px;
+}
