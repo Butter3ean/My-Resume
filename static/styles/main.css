@@ -19,13 +19,15 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.fa-solid {
+header .fa-solid {
     color: cornflowerblue;
+    margin-right: 8px;
 }
 
 header {
     text-align: center;
     margin-bottom: 20px;
+    border: 2px solid cornflowerblue;
 }
 
 header h1 {
