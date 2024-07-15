@@ -45,7 +45,10 @@ my_resume = {
                             'Collaborated with fellow educators to integrate technology into the curriculum, enhancing student learning outcomes and preparing them for future careers in technology.']
         }}
 
-
 @app.route('/')
 def index():
-    return render_template('index.html', template_resume = my_resume)
+    return render_template('index.html')
+
+@app.route('/resume')
+def resume():
+    return render_template('resume.html', template_resume = my_resume)
