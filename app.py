@@ -8,6 +8,7 @@ my_resume = {
     'phone_num': ['(229) 231-2567', 'fa-phone'],
     'email': ['dhughes3223@gmail.com', 'fa-envelope'],
     'links': [['https://github.com/Dalton-K-Hughes', 'fa-github'], ['https://www.linkedin.com/in/dhughes3223/', 'fa-linkedin']],
+    'education': {'school': 'Georgia Southern University', 'degree': 'Bachelor of Science, Computer Science'},
     'skills': [
         {'languages': ['python', 'kotlin', 'java', 'html', 'css', 'javascript', 'c#']}, 
         {'frameworks': ['flask', 'jetpack compose', 'spring', 'react', 'django']}, 
