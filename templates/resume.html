@@ -47,8 +47,8 @@
 
       <div class="education">
         <h3>Education</h3>
-        <h4>Bachelor of Science, Computer Science</h4>
-        <p>Georgia Southern University</p>
+        <h4>{{ template_resume['education']['degree'] | title }}</h4>
+        <p>{{ template_resume['education']['school'] | title }}</p>
       </div>
 
       <div class="projects">
@@ -66,7 +66,7 @@
       <div class="exp">
         <h3>Experience</h3>
         <h4>{{ template_resume['work experience']['title'] }}</h4>
-        <h4><em>{{ template_resume['work experience']['location'] }}</em></h4>
+        <h4>{{ template_resume['work experience']['location'] }}</h4>
         <ul>
           {% for desc in template_resume['work experience']['description'] %}
           <li>{{ desc }}</li>

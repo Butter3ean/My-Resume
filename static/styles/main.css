@@ -70,7 +70,7 @@ header .fa-linkedin:hover {
 }
 
 .education h3, .projects h3, .exp h3 {
-    font-size: 1.8em;
+    font-size: 1.5em;
     color: #333;
     margin-bottom: 10px;
     border-bottom: 2px solid cornflowerblue;
@@ -78,7 +78,7 @@ header .fa-linkedin:hover {
 }
 
 .education h4, .projects h4, .exp h4 {
-    font-size: 1.4em;
+    font-size: 1.1em;
     color: #333;
     margin-bottom: 5px;
 }
@@ -99,14 +99,14 @@ header .fa-linkedin:hover {
     }
 
     header h1 {
-        font-size: 2em;
+        font-size: 1.5em; /* Adjusted size */
     }
 
-    section h3 {
-        font-size: 1.5em;
+    .education h3, .projects h3, .exp h3 {
+        font-size: 1.2em; /* Adjusted size */
     }
 
-    section h4 {
-        font-size: 1.2em;
+    .education h4, .projects h4, .exp h4 {
+        font-size: 1em; /* Adjusted size */
     }
 }
