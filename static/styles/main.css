@@ -4,47 +4,59 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary-color: #000;      /* Black */
+    --secondary-color: #1a1a1a; /* Very dark grey */
+    --tertiary-color: #333;     /* Dark grey */
+    --background-color: #111;   /* Darker background */
+    --accent-color: #444;       /* Accent color for lighter shades */
+    --border-color: #555;       /* Light grey for borders */
+}
+
+
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Raleway', sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
     color: #333;
+    background-image: url(https://images.pexels.com/photos/12040572/pexels-photo-12040572.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .container {
     max-width: 800px;
     margin: 40px auto;
     padding: 20px;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.90);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 header .fa-solid {
-    color: cornflowerblue;
+    color: var(--accent-color);
     margin-right: 8px;
 }
 
 header {
     text-align: center;
     margin-bottom: 20px;
-    border: 2px solid cornflowerblue;
 }
 
 header h1 {
     font-size: 2.5em;
     margin-bottom: 6px;
-    color: #333;
+    color: var(--primary-color);
 }
 
 header h4 {
     margin: 10px 0;
     font-size: 1.2em;
-    color: #666;
+    color: var(--secondary-color);
 }
 
 header a {
     margin: 0 10px;
-    color: #333;
+    color: var(--secondary-color);
 }
 
 header .fa-github:hover {
@@ -55,25 +67,32 @@ header .fa-linkedin:hover {
     color: #0077B5;
 }
 
+.skills {
+    border: 2px groove var(--accent-color);
+    line-height: 1em;
+    text-align: center;
+    padding-top: 10px;
+}
+
 .skills, .education, .projects, .exp {
     margin-bottom: 20px;
 }
 
 .skills p, .education p, .projects p, .exp p {
     font-size: 1em;
-    color: #555;
+    color: var(--accent-color);
     margin-bottom: 10px;
 }
 
 .skills b, .education b, .projects b, .exp b {
-    color: cornflowerblue;
+    color: var(--secondary-color);
 }
 
 .education h3, .projects h3, .exp h3 {
     font-size: 1.5em;
-    color: #333;
+    color: var(--tertiary-color);
     margin-bottom: 10px;
-    border-bottom: 2px solid cornflowerblue;
+    border-bottom: 2px solid var(--accent-color);
     display: inline-block;
 }
 
@@ -92,6 +111,36 @@ header .fa-linkedin:hover {
     margin-bottom: 5px;
 }
 
+.projects {
+    background: var(--highlight-color); /* White background */
+    padding: 15px;
+    border-left: 4px solid var(--accent-color); /* Thin accent border */
+    margin-bottom: 20px;
+}
+
+.projects h3 {
+    font-size: 1.6em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.projects h4 {
+    font-size: 1.4em;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.projects ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.projects ul li {
+    margin-bottom: 5px;
+    padding-left: 10px; /* Indentation for list items */
+    border-left: 2px solid var(--border-color); /* Thin border for list items */
+}
 
 @media (max-width: 768px) {
     .container {

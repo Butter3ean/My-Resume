@@ -9,9 +9,9 @@
       href="{{ url_for('static',filename='styles/main.css') }}"
     />
     <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-    rel="stylesheet"
-  />
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <script
       src="https://kit.fontawesome.com/f806682d97.js"
       crossorigin="anonymous"
@@ -24,7 +24,7 @@
         <h1>{{ template_resume['name'] }}</h1>
         {% for link_info in template_resume['links'] %}
         <a href="{{ link_info[0] }}" target="_blank"
-          ><i class="fa-brands {{ link_info[1] }} fa-xl"></i
+          ><i class="fa-brands {{ link_info[1] }} fa-2xl"></i
         ></a>
         {% endfor %}
         <h4>
@@ -39,10 +39,11 @@
       </header>
 
       <div class="skills">
-        {% for skill_type in template_resume['skills'] %} {% for key, list in
-        skill_type.items() %}
-        <p><b>{{ key | title }}:</b> {{ ', '.join(list) | title}}</p>
-        {% endfor %} {% endfor %}
+        {% for skill_type in template_resume['skills'] %} 
+          {% for key, list in skill_type.items() %}
+            <p><b>{{ key | title }}:</b> {{ ', '.join(list) | title}}</p>
+          {% endfor %} 
+        {% endfor %}
       </div>
 
       <div class="education">
