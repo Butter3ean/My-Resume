@@ -1,6 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+{% extends 'base.html' %}
+{% block head %}
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
@@ -16,9 +15,9 @@
       src="https://kit.fontawesome.com/f806682d97.js"
       crossorigin="anonymous"
     ></script>
-    <title>Document</title>
-  </head>
-  <body>
+    <title>Resume</title>
+    {% endblock %}
+{% block content %}
     <div class="container">
       <header>
         <h1>{{ template_resume['name'] }}</h1>
@@ -75,5 +74,4 @@
         </ul>
       </div>
     </div>
-  </body>
-</html>
+{% endblock %}
