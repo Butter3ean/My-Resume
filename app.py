@@ -3,7 +3,15 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-my_resume = {
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/resume')
+def resume():
+
+    my_resume = {
     'name': 'Dalton K Hughes',
     'phone_num': ['(229) 231-2567', 'fa-phone'],
     'email': ['dhughes3223@gmail.com', 'fa-envelope'],
@@ -45,11 +53,6 @@ my_resume = {
                             'Mentored and guided students in developing software projects, providing hands-on assistance and technical support throughout the development lifecycle.', 
                             'Collaborated with fellow educators to integrate technology into the curriculum, enhancing student learning outcomes and preparing them for future careers in technology.']
         }}
+    
 
-@app.route('/')
-def index():
-    return render_template('index.html')
-
-@app.route('/resume')
-def resume():
     return render_template('resume.html', template_resume = my_resume)
