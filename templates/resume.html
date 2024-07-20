@@ -1,77 +1,74 @@
-{% extends 'base.html' %}
-{% block head %}
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{ url_for('static',filename='styles/main.css') }}"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/f806682d97.js"
-      crossorigin="anonymous"
-    ></script>
-    <title>Resume</title>
-    {% endblock %}
-{% block content %}
-    <div class="container">
-      <header>
-        <h1>{{ template_resume['name'] }}</h1>
-        {% for link_info in template_resume['links'] %}
-        <a href="{{ link_info[0] }}" target="_blank"
-          ><i class="fa-brands {{ link_info[1] }} fa-2xl"></i
-        ></a>
-        {% endfor %}
-        <h4>
-          <i class="fa-solid {{ template_resume['phone_num'][1] }} fa-xl"></i>{{
-          template_resume['phone_num'][0] }}
-        </h4>
-        <h4>
-          <i class="fa-solid {{ template_resume['email'][1] }} fa-xl"></i>{{
-          template_resume['email'][0] }}
-        </h4>
-        <!--TODO: Check for appropriate use of icons-->
-      </header>
+{% extends 'base.html' %} {% block head %}
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static',filename='styles/resume.css') }}"
+/>
+<link
+  href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+  rel="stylesheet"
+/>
+<script
+  src="https://kit.fontawesome.com/f806682d97.js"
+  crossorigin="anonymous"
+></script>
+<title>Resume</title>
+{% endblock %} {% block content %}
+<div class="container">
+  <header>
+    <h1>{{ template_resume['name'] }}</h1>
+    {% for link_info in template_resume['links'] %}
+    <a href="{{ link_info[0] }}" target="_blank"
+      ><i class="fa-brands {{ link_info[1] }} fa-2xl"></i
+    ></a>
+    {% endfor %}
+    <h4>
+      <i class="fa-solid {{ template_resume['phone_num'][1] }} fa-xl"></i>{{
+      template_resume['phone_num'][0] }}
+    </h4>
+    <h4>
+      <i class="fa-solid {{ template_resume['email'][1] }} fa-xl"></i>{{
+      template_resume['email'][0] }}
+    </h4>
+    <!--TODO: Check for appropriate use of icons-->
+  </header>
 
-      <div class="skills">
-        {% for skill_type in template_resume['skills'] %} 
-          {% for key, list in skill_type.items() %}
-            <p><b>{{ key | title }}:</b> {{ ', '.join(list) | title}}</p>
-          {% endfor %} 
-        {% endfor %}
-      </div>
+  <div class="skills">
+    {% for skill_type in template_resume['skills'] %} {% for key, list in
+    skill_type.items() %}
+    <p><b>{{ key | title }}:</b> {{ ', '.join(list) | title}}</p>
+    {% endfor %} {% endfor %}
+  </div>
 
-      <div class="education">
-        <h3>Education</h3>
-        <h4>{{ template_resume['education']['degree'] | title }}</h4>
-        <p>{{ template_resume['education']['school'] | title }}</p>
-      </div>
+  <div class="education">
+    <h3>Education</h3>
+    <h4>{{ template_resume['education']['degree'] | title }}</h4>
+    <p>{{ template_resume['education']['school'] | title }}</p>
+  </div>
 
-      <div class="projects">
-        <h3>Projects</h3>
-        {% for project in template_resume['projects'] %}
-        <h4>{{ project['name'] }}</h4>
-        <ul>
-          {% for description in project['description'] %}
-          <li>{{ description }}</li>
-          {% endfor %}
-        </ul>
-        {% endfor %}
-      </div>
+  <div class="projects">
+    <h3>Projects</h3>
+    {% for project in template_resume['projects'] %}
+    <h4>{{ project['name'] }}</h4>
+    <ul>
+      {% for description in project['description'] %}
+      <li>{{ description }}</li>
+      {% endfor %}
+    </ul>
+    {% endfor %}
+  </div>
 
-      <div class="exp">
-        <h3>Experience</h3>
-        <h4>{{ template_resume['work experience']['title'] }}</h4>
-        <h4>{{ template_resume['work experience']['location'] }}</h4>
-        <ul>
-          {% for desc in template_resume['work experience']['description'] %}
-          <li>{{ desc }}</li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
+  <div class="exp">
+    <h3>Experience</h3>
+    <h4>{{ template_resume['work experience']['title'] }}</h4>
+    <h4>{{ template_resume['work experience']['location'] }}</h4>
+    <ul>
+      {% for desc in template_resume['work experience']['description'] %}
+      <li>{{ desc }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
 {% endblock %}
